@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed-variant": "#72333c", "tertiary": "#362400", "on-error": "#ffffff", "tertiary-fixed": "#ffdeaa", "tertiary-fixed-dim": "#f5bd58", "primary": "#550314", "surface-container-high": "#eee7dd", "secondary-container": "#fea6b0", "on-primary-fixed": "#40000c", "on-primary-container": "#fc848c", "surface-container-highest": "#e8e2d7", "inverse-on-surface": "#f7f0e5", "error-container": "#ffdad6", "on-surface": "#1e1b15", "surface-container-lowest": "#ffffff", "on-secondary": "#ffffff", "error": "#ba1a1a", "on-error-container": "#93000a", "on-tertiary-fixed": "#271900", "on-primary-fixed-variant": "#812631", "primary-container": "#741c28", "surface-container-low": "#faf3e8", "surface": "#fff8ef", "primary-fixed-dim": "#ffb3b5", "on-primary": "#ffffff", "on-tertiary-fixed-variant": "#5f4100", "on-tertiary-container": "#d39f3c", "on-background": "#1e1b15", "on-secondary-fixed": "#3b0712", "outline-variant": "#dcc0c0", "on-secondary-container": "#793942", "surface-bright": "#fff8ef", "outline": "#897172", "primary-fixed": "#ffdada", "tertiary-container": "#523800", "surface-tint": "#a03d47", "inverse-surface": "#333029", "on-surface-variant": "#564242", "secondary-fixed-dim": "#ffb2ba", "background": "#fff8ef", "secondary-fixed": "#ffd9dc", "surface-dim": "#e0d9cf", "surface-variant": "#e8e2d7", "secondary": "#8e4a52", "surface-container": "#f4ede2", "inverse-primary": "#ffb3b5", "on-tertiary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "space-sm": "0.5rem", "margin": "3rem", "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-xl": "2.5rem", "space-md": "1rem", "space-lg": "1.5rem", "margin-tablet": "2rem", "gutter": "1.5rem" }, "fontFamily": { "display-lg": ["Playfair Display"], "body-md": ["Plus Jakarta Sans"], "headline-md": ["Playfair Display"], "label-sm": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "title-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "display-md-mobile": ["Playfair Display"], "body-lg": ["Plus Jakarta Sans"], "display-md": ["Playfair Display"], "headline-lg": ["Playfair Display"], "label-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Playfair Display"], "label-lg": ["Plus Jakarta Sans"] }, "fontSize": { "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }], "title-md": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "title-lg": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "display-md-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "display-md": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(72,18,28,0.04)] pt-safe"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:text-primary hover:bg-surface-container/60 transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span></button><img alt="PK Punjabi Brand Logo" class="h-7 w-auto object-contain shrink-0 hidden sm:block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0rcKBpsRwvNf_Vxmp7aV9XEj-bs0M4UJc4ohbPJIInvlLMDFtWh70R8qtA8SP7HJw8EMyf8y1VKjN8N8d8Xe3kWpeueNJBGJu9kwFcBt2CUyzJe6rVKKzE67ND-uO8CfIPVkzDI-LiCo0gfATd1l_-jWHnzMJRS6VY7MrX2blMbMmYF8yfag_eTKJDAIsVKLsRgMebK-EAOOhWWxi1JI51xffPGv3_bfFJZ_QS3CI"/><h1 class="font-title-lg text-title-lg text-on-surface font-headline-md font-semibold truncate">Dish Details</h1></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Search dishes" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container/60 transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">search</span></button><a class="w-11 h-11 flex items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-tertiary-fixed-dim" data-path="account" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-tertiary-fixed-dim/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATp0cjgAZcj2IAqM7emeeFAMSCoeLzhWWZCiL0n4GWwk7jabdQ_QC7Szh2Kn_mGCOseDl01vmMe-jjBx3lrVdD8Ghoc0L8zmGKTFIjV-efylQO56CjCAvj2q01yLSzkq1ECTMtf0igXvsrx9Rm0KfAaUSBLxEewOstM-MAcWh0ZLHHamlU9RcHUOiEPVkuK2ovaleVviTPRV2QGDkthM_IJOqWFVnsz1lstazm2Oem"/></a></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full pb-32">
+<!-- Hero Showcase Container -->
+<div class="relative w-full h-80 bg-surface-container-high overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Professional culinary close-up photograph of royal Punjabi Dal Makhani served in a traditional burnished brass handi. The dark velvety black lentils are glistening in rich cream, crowned with a melting dollop of fresh churned white butter makhan, delicate ginger juliennes, and a vibrant coriander sprig. Warm glowing ambient tandoor firelight in background with subtle rising steam, high-end food magazine editorial quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnAilVPOy7ZYCWW8xX--vymHCAORXIlyqdkYemF_u7qDBx2ZBt_7dh_sOHIK09CQ0MbLPwSGpWJI8HBomfX5t4cZfpShtINJ_BzKvokzsR0RS9NgDV_g_C4i4rr8dE8xP1HpuDgFHbExJuOB3_yQA78X9H73GImR3sdOLxz7IZETT290C7BIR2nNWzopok1bSkjzPmCMmKGNdA1fN6IdRBCJgyvVReUUxtImMBu5SN"/>
+<!-- Gradient Overlay Scrim for text & action readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/20 to-transparent pointer-events-none"></div>
+<!-- Quick Floating Action Badges -->
+<div class="absolute top-4 right-4 flex items-center gap-space-sm z-10">
+<button aria-label="Share dish" class="w-10 h-10 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-primary flex items-center justify-center shadow-md active:scale-90 transition-transform" id="shareBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button aria-label="Add to favorites" class="w-10 h-10 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-primary flex items-center justify-center shadow-md active:scale-90 transition-transform" id="favBtn" type="button">
+<span class="material-symbols-outlined text-[20px]" id="favIcon">favorite</span>
+</button>
+</div>
+<!-- Hero Bottom Ribbon Info -->
+<div class="absolute bottom-4 inset-x-4 flex items-end justify-between z-10 text-surface">
+<div class="flex flex-col gap-space-xs">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-2.5 py-1 rounded-full uppercase tracking-wider font-bold w-fit shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+          Heritage Masterpiece
+        </span>
+<div class="flex items-center gap-2">
+<!-- Dietary Status Indicator: Veg -->
+<div class="w-4 h-4 rounded-[3px] bg-[#1E7E34]/15 flex items-center justify-center" style="box-shadow: 0 0 0 1.5px #1E7E34 inset;">
+<div class="w-2 h-2 rounded-full bg-[#1E7E34]"></div>
+</div>
+<span class="font-label-md text-label-md text-surface/90 font-medium">Pure Vegetarian</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-lg shadow-md text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-title-md text-title-md font-bold text-on-surface">4.9</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-normal">(1,840+)</span>
+</div>
+</div>
+</div>
+<!-- Content Body -->
+<div class="flex flex-col px-gutter-mobile pt-space-md gap-space-lg">
+<!-- Title & Operational Stats -->
+<div class="flex flex-col gap-space-xs bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface leading-tight">24-Hour Dum Dal Makhani</h2>
+<div class="text-right shrink-0">
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="basePriceDisplay">₹260</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">base price</p>
+</div>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant pt-space-xs">
+<div class="flex items-center gap-1 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">schedule</span>
+<span>25-30 mins</span>
+</div>
+<div class="w-1 h-1 rounded-full bg-outline-variant"></div>
+<div class="flex items-center gap-1 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">local_fire_department</span>
+<span>Slow Cooked Over Charcoal</span>
+</div>
+</div>
+<!-- Culinary Heritage Narrative -->
+<div class="mt-space-sm p-space-sm bg-surface-container rounded-lg">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Our legendary recipe perfected over 50 years. Whole black urad dal and Kashmiri rajma slow-simmered in a sealed clay handi on glowing embers for 24 hours with hand-churned white makhan, vine tomato reduction, and our heirloom royal garam masala.
+        </p>
+</div>
+</div>
+<!-- Section 1: Portion Size -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface font-bold flex items-center gap-2">
+<span>Portion Size</span>
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded-full uppercase">Required</span>
+</h3>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Select 1</span>
+</div>
+<div class="grid grid-cols-1 gap-2.5">
+<!-- Half Handi Option -->
+<label class="portion-option relative flex items-center justify-between p-3.5 rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer transition-all">
+<input checked="" class="peer sr-only" data-label="Half Handi" name="portion" type="radio" value="260"/>
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center peer-checked:bg-primary">
+<div class="w-2 h-2 rounded-full bg-surface hidden peer-checked:block"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Half Handi</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ideal for 1-2 Royal Diners</span>
+</div>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-primary">₹260</span>
+<!-- Active Highlight Border via shadow ring simulator -->
+<div class="absolute inset-0 rounded-xl pointer-events-none peer-checked:bg-primary/5"></div>
+</label>
+<!-- Full Handi Option -->
+<label class="portion-option relative flex items-center justify-between p-3.5 rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer transition-all">
+<input class="peer sr-only" data-label="Full Handi" name="portion" type="radio" value="420"/>
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center peer-checked:bg-primary">
+<div class="w-2 h-2 rounded-full bg-surface hidden peer-checked:block"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Full Handi</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Generous feast for 3-4 Diners</span>
+</div>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-primary">₹420</span>
+<div class="absolute inset-0 rounded-xl pointer-events-none peer-checked:bg-primary/5"></div>
+</label>
+</div>
+</div>
+<!-- Section 2: Spice Level Visual Customizer -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Spice Elevation</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tailored seasoning</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<label class="spice-chip relative cursor-pointer">
+<input class="peer sr-only" name="spice" type="radio" value="Mild"/>
+<div class="p-3 rounded-xl bg-surface-container-lowest text-center flex flex-col items-center gap-1 shadow-sm peer-checked:bg-primary peer-checked:text-on-primary transition-all">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim peer-checked:text-tertiary-fixed">eco</span>
+<span class="font-label-md text-label-md font-semibold">Mild</span>
+<span class="font-label-sm text-label-sm opacity-80">Kids friendly</span>
+</div>
+</label>
+<label class="spice-chip relative cursor-pointer">
+<input checked="" class="peer sr-only" name="spice" type="radio" value="Medium"/>
+<div class="p-3 rounded-xl bg-surface-container-lowest text-center flex flex-col items-center gap-1 shadow-sm peer-checked:bg-primary peer-checked:text-on-primary transition-all">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed-dim peer-checked:text-tertiary-fixed">whatshot</span>
+<span class="font-label-md text-label-md font-semibold">Medium</span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim peer-checked:text-tertiary-fixed font-bold">Chef Pick</span>
+</div>
+</label>
+<label class="spice-chip relative cursor-pointer">
+<input class="peer sr-only" name="spice" type="radio" value="Teekha"/>
+<div class="p-3 rounded-xl bg-surface-container-lowest text-center flex flex-col items-center gap-1 shadow-sm peer-checked:bg-primary peer-checked:text-on-primary transition-all">
+<span class="material-symbols-outlined text-[20px] text-error peer-checked:text-secondary-fixed">local_fire_department</span>
+<span class="font-label-md text-label-md font-semibold">Teekha</span>
+<span class="font-label-sm text-label-sm opacity-80">Authentic Fire</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Section 3: Royal Add-ons (Checkboxes) -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Royal Add-ons</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Recommended pairings</span>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- Addon 1 (Default Checked) -->
+<label class="addon-item flex items-center justify-between p-3.5 rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer active:scale-[0.99] transition-all">
+<div class="flex items-center gap-3">
+<input checked="" class="w-5 h-5 rounded accent-primary cursor-pointer" data-title="Extra Churned White Makhan" name="addons" type="checkbox" value="30"/>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-medium">Extra Churned White Makhan</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Traditional fresh butter disc (+50g)</span>
+</div>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">+₹30</span>
+</label>
+<!-- Addon 2 (Default Checked) -->
+<label class="addon-item flex items-center justify-between p-3.5 rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer active:scale-[0.99] transition-all">
+<div class="flex items-center gap-3">
+<input checked="" class="w-5 h-5 rounded accent-primary cursor-pointer" data-title="Garlic Butter Naan (1 pc)" name="addons" type="checkbox" value="65"/>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-medium">Garlic Butter Naan (1 pc)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Crisp clay oven flatbread with roasted garlic</span>
+</div>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">+₹65</span>
+</label>
+<!-- Addon 3 -->
+<label class="addon-item flex items-center justify-between p-3.5 rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer active:scale-[0.99] transition-all">
+<div class="flex items-center gap-3">
+<input class="w-5 h-5 rounded accent-primary cursor-pointer" data-title="Sirka Pickled Baby Onions" name="addons" type="checkbox" value="20"/>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-medium">Sirka Baby Onions &amp; Chilli</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Beetroot steeped tangy shallots</span>
+</div>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">+₹20</span>
+</label>
+<!-- Addon 4 -->
+<label class="addon-item flex items-center justify-between p-3.5 rounded-xl bg-surface-container-lowest shadow-sm cursor-pointer active:scale-[0.99] transition-all">
+<div class="flex items-center gap-3">
+<input class="w-5 h-5 rounded accent-primary cursor-pointer" data-title="Roasted Papad &amp; Mint Chutney" name="addons" type="checkbox" value="35"/>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-medium">Roasted Papad &amp; Mint Chutney</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2 Uraddisc papads with thick dahi pudina dip</span>
+</div>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">+₹35</span>
+</label>
+</div>
+</div>
+<!-- Section 4: Special Instructions -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">edit_note</span>
+<span>Chef Instructions</span>
+</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Optional</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-xl shadow-sm">
+<textarea class="w-full bg-transparent p-2 font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none resize-none" id="chefNotes" placeholder="E.g., Less oil, extra ginger juliennes, separate butter packet..." rows="2"></textarea>
+</div>
+</div>
+<!-- Section 5: Royal Accompaniments (Frequently Ordered Carousel) -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Royal Accompaniments</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Diners also ordered these delights</p>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Pairings</span>
+</div>
+<!-- Horizontal Scrollable Container -->
+<div class="flex gap-space-sm overflow-x-auto pb-2 -mx-gutter-mobile px-gutter-mobile no-scrollbar snap-x">
+<!-- Quick Add Card 1 -->
+<div class="w-48 shrink-0 bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col snap-start">
+<div class="relative w-full h-28 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Tandoori Garlic Naan freshly taken out of clay oven, brushed with melted golden salted butter and sprinkled with toasted minced garlic flakes and chopped cilantro leaves on a rustic plate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8Lay6I2YjnJl6VCNG21y1BbDJZtPUgykFyr-g9aIdJflNsCQxFbSJfmONl8UGeJZ5x9-Uo0xfOPqXJSo7tj9euNyQASN3XPpjjsnZgM_u_4TiSGntj56s2ilc0HScsCZbQ9enFEj80AaZwrSLMx_F7zP7wBmfPiNo3zDUN3QXrrh7-4p7HZY7kQomJjU9SOtqrlNAwapIIvZTVwsHmGZmF7lKjuH5eqz8MWke1K98"/>
+<div class="absolute top-2 left-2 w-3.5 h-3.5 rounded-[2px] bg-[#1E7E34]/15 flex items-center justify-center" style="box-shadow: 0 0 0 1px #1E7E34 inset;">
+<div class="w-1.5 h-1.5 rounded-full bg-[#1E7E34]"></div>
+</div>
+</div>
+<div class="p-3 flex flex-col justify-between flex-1 gap-2">
+<div>
+<h4 class="font-title-md text-title-md text-on-surface truncate font-semibold">Garlic Naan</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Crisp Clay Oven</p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-lg text-label-lg font-bold text-primary">₹65</span>
+<button class="px-2.5 py-1 rounded-md bg-surface-container text-primary font-label-md text-label-md font-bold hover:bg-primary hover:text-on-primary active:scale-95 transition-all" type="button">
+                + ADD
+              </button>
+</div>
+</div>
+</div>
+<!-- Quick Add Card 2 -->
+<div class="w-48 shrink-0 bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col snap-start">
+<div class="relative w-full h-28 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Fragrant Basmati Jeera Pulao rice served in an elegant copper bowl, aromatic cumin seeds and golden fried onions visible with a subtle glaze of pure desi ghee." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6K6y9JvzlsVyainnWgPb9FUBNSByHRzpwDEOvhihLpIljMFujoJoCcRAzCGf_zFUl-A3q0SoU5uXAzDfc1TV7r4szaWQ4C-AelazOJpUH7kH7tI8YP1agx3FusCzVsFXhAUSCUI9Ml_0cVqgvh0xKFAVhk_fc3c3vYlP-ExhnoEt82PVcH5-vPTWQC6z0aascBAKwnlbAX3eCVeV4rdi1sqUZcfhj8de89-fH4dYp"/>
+<div class="absolute top-2 left-2 w-3.5 h-3.5 rounded-[2px] bg-[#1E7E34]/15 flex items-center justify-center" style="box-shadow: 0 0 0 1px #1E7E34 inset;">
+<div class="w-1.5 h-1.5 rounded-full bg-[#1E7E34]"></div>
+</div>
+</div>
+<div class="p-3 flex flex-col justify-between flex-1 gap-2">
+<div>
+<h4 class="font-title-md text-title-md text-on-surface truncate font-semibold">Jeera Pulao</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Aged Basmati Ghee</p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-lg text-label-lg font-bold text-primary">₹160</span>
+<button class="px-2.5 py-1 rounded-md bg-surface-container text-primary font-label-md text-label-md font-bold hover:bg-primary hover:text-on-primary active:scale-95 transition-all" type="button">
+                + ADD
+              </button>
+</div>
+</div>
+</div>
+<!-- Quick Add Card 3 -->
+<div class="w-48 shrink-0 bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col snap-start">
+<div class="relative w-full h-28 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Tall chilled traditional brass tumbler filled with rich thick Patiala Sweet Lassi topped with a thick layer of malai cream, saffron strands, and crushed pistachio nuts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSX0yiwrqvN6wq0U9AnY3_138R6j5AboEM_qAIi4H9xNEogc3a0zfev-V4oPF4a5_iAAUWtaxtgofUfFMfWLP3yPFSyffncrb3Kd2jMamRKMytFxg15UG6kecTx804h9Ziv0Z9o_Dtm0oYEGPauUFCMsxqCSqme91EtHLDQyqXAOEp2ClNVoV05X1ZXFMTdcXG4Sh6ZQdzzvq9c6nxamnLaRNQ0XHcLxKhGVBgIPFx"/>
+<div class="absolute top-2 left-2 w-3.5 h-3.5 rounded-[2px] bg-[#1E7E34]/15 flex items-center justify-center" style="box-shadow: 0 0 0 1px #1E7E34 inset;">
+<div class="w-1.5 h-1.5 rounded-full bg-[#1E7E34]"></div>
+</div>
+</div>
+<div class="p-3 flex flex-col justify-between flex-1 gap-2">
+<div>
+<h4 class="font-title-md text-title-md text-on-surface truncate font-semibold">Patiala Lassi</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Thick Malai &amp; Kesar</p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-lg text-label-lg font-bold text-primary">₹120</span>
+<button class="px-2.5 py-1 rounded-md bg-surface-container text-primary font-label-md text-label-md font-bold hover:bg-primary hover:text-on-primary active:scale-95 transition-all" type="button">
+                + ADD
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Persistent Floating Bottom Action Bar (Mobile Sticky Sheet) -->
+<div class="fixed bottom-0 inset-x-0 z-40 bg-surface-container-lowest/95 backdrop-blur-xl p-4 shadow-[0_-8px_30px_rgba(72,18,28,0.08)] pb-safe">
+<div class="max-w-md mx-auto flex items-center gap-space-sm">
+<!-- Quantity Counter Stepper -->
+<div class="flex items-center bg-surface-container rounded-xl p-1 shrink-0">
+<button aria-label="Decrease quantity" class="w-10 h-10 rounded-lg flex items-center justify-center text-primary font-bold active:scale-90 transition-transform disabled:opacity-40" id="btnMinus" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="w-8 text-center font-title-lg text-title-lg font-bold text-on-surface" id="qtyDisplay">1</span>
+<button aria-label="Increase quantity" class="w-10 h-10 rounded-lg flex items-center justify-center text-primary font-bold active:scale-90 transition-transform" id="btnPlus" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<!-- Add to Cart CTA with Total Dynamic Price -->
+<button class="flex-1 h-12 bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-bold rounded-xl shadow-md flex items-center justify-between px-5 active:scale-[0.98] transition-all" id="btnAddToCart" style="box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);" type="button">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+<span>Add to Basket</span>
+</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded-lg text-title-md font-bold" id="totalPriceDisplay">₹355</span>
+</button>
+</div>
+</div>
+<!-- Toast Notification Feedback -->
+<div class="fixed top-20 inset-x-4 max-w-sm mx-auto z-50 bg-inverse-surface text-inverse-on-surface p-3.5 rounded-xl shadow-xl flex items-center justify-between pointer-events-none opacity-0 translate-y-[-10px] transition-all duration-300" id="toastBox">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md font-medium" id="toastMsg">Added to Royal Basket</span>
+</div>
+<span class="material-symbols-outlined text-[16px] text-inverse-on-surface/70">close</span>
+</div>
+</div>
+<script>
+  (function initFoodDetails() {
+    let currentQty = 1;
+    let basePrice = 260; // Default Half Handi
+    const portionInputs = document.querySelectorAll('input[name="portion"]');
+    const addonCheckboxes = document.querySelectorAll('input[name="addons"]');
+    const totalPriceDisplay = document.getElementById('totalPriceDisplay');
+    const basePriceDisplay = document.getElementById('basePriceDisplay');
+    const qtyDisplay = document.getElementById('qtyDisplay');
+    const btnMinus = document.getElementById('btnMinus');
+    const btnPlus = document.getElementById('btnPlus');
+    const btnAddToCart = document.getElementById('btnAddToCart');
+    const favBtn = document.getElementById('favBtn');
+    const favIcon = document.getElementById('favIcon');
+    const shareBtn = document.getElementById('shareBtn');
+    const toastBox = document.getElementById('toastBox');
+    const toastMsg = document.getElementById('toastMsg');
+
+    function calculateTotal() {
+      // 1. Get Selected Portion Price
+      let selectedPortionPrice = basePrice;
+      portionInputs.forEach(input => {
+        if (input.checked) {
+          selectedPortionPrice = parseInt(input.value, 10);
+        }
+      });
+
+      // 2. Sum addons
+      let addonsSum = 0;
+      addonCheckboxes.forEach(cb => {
+        if (cb.checked) {
+          addonsSum += parseInt(cb.value, 10);
+        }
+      });
+
+      const singleItemTotal = selectedPortionPrice + addonsSum;
+      const grandTotal = singleItemTotal * currentQty;
+
+      // Update UI displays
+      totalPriceDisplay.textContent = `₹${grandTotal}`;
+      basePriceDisplay.textContent = `₹${selectedPortionPrice}`;
+    }
+
+    // Attach Portion listeners
+    portionInputs.forEach(input => {
+      input.addEventListener('change', () => {
+        calculateTotal();
+      });
+    });
+
+    // Attach Addon listeners
+    addonCheckboxes.forEach(cb => {
+      cb.addEventListener('change', () => {
+        calculateTotal();
+      });
+    });
+
+    // Quantity Handlers
+    btnMinus.addEventListener('click', () => {
+      if (currentQty > 1) {
+        currentQty -= 1;
+        qtyDisplay.textContent = currentQty;
+        btnMinus.disabled = currentQty === 1;
+        calculateTotal();
+      }
+    });
+
+    btnPlus.addEventListener('click', () => {
+      if (currentQty < 10) {
+        currentQty += 1;
+        qtyDisplay.textContent = currentQty;
+        btnMinus.disabled = false;
+        calculateTotal();
+      }
+    });
+
+    // Favorite Toggle
+    let isFav = false;
+    favBtn.addEventListener('click', () => {
+      isFav = !isFav;
+      favIcon.style.fontVariationSettings = isFav ? "'FILL' 1" : "'FILL' 0";
+      favIcon.classList.toggle('text-error', isFav);
+      showToast(isFav ? "Saved to your Royal Favorites" : "Removed from Favorites");
+    });
+
+    // Share Trigger
+    shareBtn.addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: '24-Hour Dum Dal Makhani | PK Punjabi',
+            text: 'Feast your senses on the slow-cooked 24-Hour Dum Dal Makhani from PK Punjabi!',
+            url: window.location.href,
+          });
+        } catch (e) {
+          showToast("Link ready to share!");
+        }
+      } else {
+        showToast("Dish link copied to clipboard!");
+      }
+    });
+
+    // Add To Cart Celebration
+    btnAddToCart.addEventListener('click', () => {
+      let portionName = "Half Handi";
+      portionInputs.forEach(p => { if(p.checked) portionName = p.getAttribute('data-label'); });
+      showToast(`${currentQty}x Dum Dal Makhani (${portionName}) added to basket!`);
+      
+      // Tactile button bounce
+      btnAddToCart.classList.add('scale-95');
+      setTimeout(() => btnAddToCart.classList.remove('scale-95'), 150);
+    });
+
+    let toastTimeout;
+    function showToast(message) {
+      clearTimeout(toastTimeout);
+      toastMsg.textContent = message;
+      toastBox.classList.remove('opacity-0', 'translate-y-[-10px]', 'pointer-events-none');
+      toastBox.classList.add('opacity-100', 'translate-y-0');
+
+      toastTimeout = setTimeout(() => {
+        toastBox.classList.remove('opacity-100', 'translate-y-0');
+        toastBox.classList.add('opacity-0', 'translate-y-[-10px]', 'pointer-events-none');
+      }, 2500);
+    }
+
+    // Initialize State
+    btnMinus.disabled = true;
+    calculateTotal();
+  })();
+</script></main></body></html>
